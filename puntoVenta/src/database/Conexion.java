@@ -20,9 +20,12 @@ public class Conexion {
     private final String USER = "root";
     private final String PASSWORD = "juve11"; 
     
-    
     public Connection  connection ; 
     public static Conexion singleInstance; 
+    
+    private  Conexion(){
+        this.connection = null; 
+    }
     
     public  Connection conectar (){
         try {
@@ -43,5 +46,13 @@ public class Conexion {
         } catch (SQLException e) {
              JOptionPane.showMessageDialog(null, e.getMessage());
         }
+    }
+    
+    public synchronized static Conexion getInstance(){
+        
+        if(singleInstance == null){
+            singleInstance = new Conexion();
+        }
+        return singleInstance;
     }
 }
