@@ -16,6 +16,7 @@ public class FrmCategoria extends javax.swing.JInternalFrame {
 
     private final CategoriaControl CONTROL;
     private String accion;
+    
     /**
      * Creates new form FrmCategoria
      */
@@ -37,6 +38,7 @@ public class FrmCategoria extends javax.swing.JInternalFrame {
     }
     
     private void limpiar() {
+        tfBuscar.setText("");
         txtNombre.setText("");
         txtDescripcion.setText("");
         this.accion = "Guardar";
@@ -241,6 +243,7 @@ public class FrmCategoria extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         this.listar(tfBuscar.getText());
+        this.limpiar();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
